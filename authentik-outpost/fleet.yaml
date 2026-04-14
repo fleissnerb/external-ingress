@@ -1,0 +1,7 @@
+defaultNamespace: guacamole-dmz
+helm:
+  repo: https://charts.goauthentik.io
+  chart: authentik-remote-outpost
+  releaseName: guac-outpost
+  valuesFiles:
+    - values.yaml
