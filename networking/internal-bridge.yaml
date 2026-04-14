@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: guacamole-internal-bridge
+  namespace: guacamole-dmz
+spec:
+  type: ExternalName
+  # This is the IP of the Internal Cluster LoadBalancer (on your Internal VLAN)
+  # Your FortiGate will handle the routing between the DMZ VM and this IP.
+  externalName: 10.0.20.50
