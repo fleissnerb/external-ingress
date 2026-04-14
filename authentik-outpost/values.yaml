@@ -1,0 +1,3 @@
+authentik_host: https://auth.yourdomain.com
+authentik_host_insecure: false
+authentik_token: "YOUR_OUTPOST_TOKEN_FROM_INTERNAL_UI"
