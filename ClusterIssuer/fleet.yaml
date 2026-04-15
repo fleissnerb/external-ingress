@@ -1,5 +1,7 @@
 defaultNamespace: external-ingress
+labels:
+  bundle: ClusterIssuer
 dependsOn:
   - selector:
       matchLabels:
-        bundle: authentik-remote-cluster
+        bundle: cert-manager

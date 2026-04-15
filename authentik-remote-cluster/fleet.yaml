@@ -1,4 +1,10 @@
 defaultNamespace: authentik-remote-cluster
+labels:
+  bundle: authentik-remote-cluster
+dependsOn:
+  - selector:
+      matchLabels:
+        bundle: ClusterIssuer
 helm:
   repo: https://charts.goauthentik.io
   chart: authentik-remote-cluster
