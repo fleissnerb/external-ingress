@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: internal-ingress
+  namespace: external-ingress
+spec:
+  type: ExternalName
+  externalName: suse-virt.crust.life

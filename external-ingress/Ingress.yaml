@@ -4,7 +4,7 @@ metadata:
   name: external-ingress
   namespace: external-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"=
+    cert-manager.io/cluster-issuer: "letsencrypt"
     nginx.ingress.kubernetes.io/auth-url: "http://guac-outpost:9000/outpost.goauthentik.io/auth/nginx"
     nginx.ingress.kubernetes.io/auth-signin: "https://auth.crust.life/outpost.goauthentik.io/start?rd=$escaped_request_uri"
 spec:
@@ -21,6 +21,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: external-internal-bridge
+            name: internal-ingress
             port:
               number: 443
