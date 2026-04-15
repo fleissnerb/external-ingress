@@ -1,7 +1,7 @@
 defaultNamespace: authentik-outpost
 helm:
   repo: https://charts.goauthentik.io
-  chart: authentik/authentik-remote-cluster
+  chart: authentik-remote-cluster
   releaseName: authentik-outpost
   version: "2026.2"
   valuesFiles:
