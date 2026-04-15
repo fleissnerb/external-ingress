@@ -1,27 +1,26 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: guac-edge-ingress
-  namespace: guacamole-dmz
+  name: external-ingress
+  namespace: external-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    # This line tells NGINX to ask the local Outpost for permission
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"=
     nginx.ingress.kubernetes.io/auth-url: "http://guac-outpost:9000/outpost.goauthentik.io/auth/nginx"
-    nginx.ingress.kubernetes.io/auth-signin: "https://auth.yourdomain.com/outpost.goauthentik.io/start?rd=$escaped_request_uri"
+    nginx.ingress.kubernetes.io/auth-signin: "https://auth.crust.life/outpost.goauthentik.io/start?rd=$escaped_request_uri"
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - remote.yourdomain.com
-    secretName: guac-remote-tls
+    - remote.crust.life
+    secretName: remote-tls
   rules:
-  - host: remote.yourdomain.com
+  - host: remote.crust.life
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: guacamole-internal-bridge
+            name: external-internal-bridge
             port:
               number: 443

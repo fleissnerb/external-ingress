@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: guacamole-internal-bridge
-  namespace: guacamole-dmz
+  name: external-internal-bridge
+  namespace: external-ingress
 spec:
   type: ExternalName
   # This is the IP of the Internal Cluster LoadBalancer (on your Internal VLAN)
