@@ -3,6 +3,6 @@ helm:
   repo: https://charts.jetstack.io
   chart: jetstack/cert-manager
   releaseName: cert-manager
-  version: 1.20.2
+  version: "1.20.2"
   values:
     installCRDs: true
