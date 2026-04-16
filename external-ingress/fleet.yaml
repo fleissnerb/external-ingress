@@ -3,3 +3,6 @@ dependsOn:
   - selector:
       matchLabels:
         bundle: authentik-remote-cluster
+  - selector:
+      matchLabels:
+        bundle: ClusterIssuer

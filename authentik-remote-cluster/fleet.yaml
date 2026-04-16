@@ -4,7 +4,7 @@ labels:
 dependsOn:
   - selector:
       matchLabels:
-        bundle: ClusterIssuer
+        bundle: authentik
 helm:
   repo: https://charts.goauthentik.io
   chart: authentik-remote-cluster
